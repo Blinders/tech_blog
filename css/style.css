@@ -1706,6 +1706,7 @@ ol.toc {
     float: left;
     width: 28.000000000000004%;
     margin: 0 1%;
+    padding-top: 64px;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
