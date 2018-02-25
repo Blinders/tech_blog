@@ -187,7 +187,6 @@ code {
     float: left;
     width: 68%;
     margin: 0 1%;
-    padding-top: 64px;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
@@ -346,8 +345,7 @@ code {
 }
 #header {
   background: #fff;
-  position: fixed;
-  width: 100vw;
+  position: relative;
 }
 #header a,
 #header a:visited {
@@ -1706,7 +1704,6 @@ ol.toc {
     float: left;
     width: 28.000000000000004%;
     margin: 0 1%;
-    padding-top: 64px;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
