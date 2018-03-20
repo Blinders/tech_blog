@@ -155,6 +155,19 @@ code {
     padding: 0;
   }
 }
+.main-inner {
+  padding-top: 64px;
+}
+@media screen and (min-width: 560px) and (max-width: 799px) {
+  .main-inner {
+    padding-top: 100px;
+  }
+}
+@media screen and (max-width: 559px) {
+  .main-inner {
+    padding-top: 128px;
+  }
+}
 .left,
 .alignleft {
   float: left;
@@ -345,7 +358,8 @@ code {
 }
 #header {
   background: #fff;
-  position: relative;
+  position: fixed;
+  width: 100vw;
 }
 #header a,
 #header a:visited {
@@ -507,7 +521,7 @@ code {
 }
 @media screen and (max-width: 559px) {
   #search-form-wrap {
-    display: none;
+    width: 130px;
   }
 }
 #search-form-wrap .search-form {
@@ -600,23 +614,6 @@ code {
 }
 #main-nav-mobile .menu:after {
   clear: both;
-}
-#main-nav-mobile .menu .search-form-input {
-  display: none;
-  padding: 0 10px;
-  margin-right: 15px;
-  height: 32px;
-  line-height: 32px;
-  border-radius: 16px;
-}
-@media screen and (max-width: 559px) {
-  #main-nav-mobile .menu .search-form-input {
-    display: block;
-  }
-}
-#main-nav-mobile .menu .search-form-input::-webkit-search-results-decoration,
-#main-nav-mobile .menu .search-form-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
 }
 .bio {
   text-align: center;
