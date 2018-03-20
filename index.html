@@ -243,7 +243,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-03/" data-id="cjezuwh4w0008690tw4li4emr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-03/" data-id="cjezyk5rh0008nm0t4mneo3cb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -407,7 +407,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-02/" data-id="cjezuwh4n0005690t28k6uh1v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-02/" data-id="cjezyk5r90005nm0tybuvk8xi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -525,10 +525,49 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h2 id="Github-Blog"><a href="#Github-Blog" class="headerlink" title="Github Blog?"></a>Github Blog?</h2><p>알 사람은 알겠지만 Github은 Repository를 개설한 뒤 Settings에 있는<br>GitHub Pages 라는 설정을 통해 웹 페이지를 개설 할 수 있다.<br></p>
-            <p class="article-more-link">
-                <a href="/tech_blog/2018/02/21/Hexo-blog-make-01/#more">Read More</a>
-            </p>
+            
+            <h2 id="Github-Blog"><a href="#Github-Blog" class="headerlink" title="Github Blog?"></a>Github Blog?</h2><p>알 사람은 알겠지만 Github은 Repository를 개설한 뒤 Settings에 있는<br>GitHub Pages 라는 설정을 통해 웹 페이지를 개설 할 수 있다.</p>
+<p>해당 설정은 root 디렉토리의 index.html을 통해서 웹페이지를 제공하는 서비스인데<br>Github을 이용하는 수많은 개발자들, 스타트업, 혹은 일반기업들도<br>해당 설정을 통해서 자신만의 포트폴리오를 만들거나<br>혹은 Repository에 올린 오픈소스의 소개등의 용도로 사용되고 있다.<br>(간단한 소개는 README.md를 이용하지만…)</p>
+<h2 id="그냥-쌩으로-해야-되나"><a href="#그냥-쌩으로-해야-되나" class="headerlink" title="그냥 쌩으로 해야 되나?"></a>그냥 쌩으로 해야 되나?</h2><p>Github을 통해서 블로그를 개설하기로 한 뒤 가장 고민했던 건 어떤 플랫폼을 사용할 건가, 였다.<br>Github Page가 뭔지는 모르겠고 <strong>일단 띄워만 보자</strong>, 싶다면 아래와 같은 절차를 거치면 된다.</p>
+<ol>
+<li>블로그를 위한 Repository를 만든다.</li>
+<li>그리고 root 디렉토리에 index.html 파일을 하나 만든다.</li>
+<li>생성한 파일(index.html)에 cdn으로 사용하려는 라이브러리를 땡기고</li>
+<li>style 태그로 css를 넣고 script로 javascript를 넣는다.</li>
+<li>body에 원하는 문구를 넣는다.</li>
+</ol>
+<p>그러면 웹 페이지가 뜨긴 뜬다.<br>위의 순서가 무슨 소린지 모르겠다면, 아래 코드를 복사해서 index.html 파일에 넣어보자.<br>아래 코드처럼만 작성해도 우리는 <strong>Hello Grey!</strong> 라는 문구를 브라우져에서 확인할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Grey Title&lt;/title&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       Hello Grey!</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>아아, 심플하다.<br>매우 많이 심플해서 예전에 APM(Apache+Php+MySQL)으로 하나하나 설정하며<br>웹 페이지 하나를 겨우겨우 띄웠던 과거의 내가 초라해지기까지 하는 느낌이다.</p>
+<p>이처럼 겨우 index.html을 만들어 넣어놓는 것만으로도 Github Page는 <strong>웹 페이지로써의</strong> 동작을 해준다.<br>(아,물론 Repository의 Settings에서 설정을 해줘야 하지만, 이마저도 <em>메인 Repository</em>라면 필요가 없다)</p>
+<p>하지만 이처럼 한 파일에 다 떄려박는건 너무 옛날 방식이고, 내가 만들려던 건 엄연히 <strong>블로그</strong>다.</p>
+<p>그냥 Hello Grey! 를 보여주고 한 페이지로 땡! 하고 끝나는 사이트가 아니라<br>블로그로써의 동작을 하는 Github Page를 개설하는 것이 목적이다.</p>
+<p>그렇기에 <strong>블로그라면</strong> </p>
+<blockquote>
+<ol>
+<li>당연히 <strong>글을 쓸 수 있는 기능</strong>이 있어야 하고</li>
+<li>그 <strong>글을 보여주는 기능</strong></li>
+<li>그리고 글에 대한 카테고리 기능이나</li>
+<li>추가적으로 태그에 대한 기능이 있으면 더 좋고 </li>
+<li>인피니티 스크롤이 아닌 이상 페이징도 되야한다.</li>
+<li>이 외에 부가적인 기능도 있겠지만 핵심은 포스팅이니까 이와같고</li>
+<li>그렇게 더해서 쓴 글들을 <strong>이쁘게(이건 중요하다) 보여줘야 한다</strong>.<br>보기에 좋은 떡이 먹기도 좋다고, 이뻐야 한다.</li>
+</ol>
+</blockquote>
+<p>뭔가 되게 많은 것 같지만 심플하게 정리를 해보면 내가 원하는 건 2가지다.</p>
+<ol>
+<li>블로그로써의 기능</li>
+<li>디자인</li>
+</ol>
+<p>위와 같은 블로그로써의 핵심기능을 제공하면서도<br>내가 만들었지만 내가 만들지 않은 것 같은 이쁨을 뿜뿜할 수 있어야 한다.</p>
+<p>물론 저 위에 적은 index.html에 장인의 손길로 한땀한땀 작업해서 만들 수는 있다.<br>하지만 그건 내 입맛에 딱맞는 자동차 하나 만들자고 자동차 공장을 만드는 꼴이다. 배보다 배꼽이 커지는 짓이랄까.</p>
+<p>그렇기에 Github Page 를 통해서 블로그를 만들려는 많은 이들은 아마도 생각했을 것이다.<br>이걸 자동화 해주는 플랫폼이 있으면 좋겠다, 라고.<br>그리고 당연하게도 있었으면 좋겠다, 라고 생각하는 서비스와 기능은 이미 있는 게 이 바닥의 정설이다.</p>
+<p>심지어 <strong>그런 애들이 2개</strong>나 있다.<br>언뜻보면 지킬박사와 하이드라고 읽을 수도 있는 이 두 녀석의 이름은<br><strong>Jekyll</strong>, 그리고 <strong>Hexo</strong>다.</p>
+<hr>
+<ol>
+<li><em>메인 Repository</em> : Github 에서 ID를 생성하면 기본적으로 Username에 대한 블로그를 제공한다.<br>다만 이또한 Repository를 별도로 생성해야만 관리가 가능하며<br><strong>생성방법은 Repository의 이름을 username.github.io 로 생성</strong>하면 된다.<br>해당 Repository를 만들면 Settings에 Github Page 관련 기능이 자동으로 True 상태이며<br><strong><a href="http://username.github.io/" target="_blank" rel="noopener">http://username.github.io/</a> 과 같은 형태로 URL을 제공</strong>한다.<br>다음 포스팅에서도 설명하겠지만 이외에 다른 Repository에서 Github Page를 이용하려 한다면<br>Settings에서 별도로 설정을 해줘야 하며 URL의 형식또한 <a href="http://username.github.io/" target="_blank" rel="noopener">http://username.github.io/</a> 에<br>Repository 가 추가로 붙어서 <a href="http://username.github.io/RepositoryName" target="_blank" rel="noopener">http://username.github.io/RepositoryName</a> 과 같은 형태를 띈다.</li>
+</ol>
+
         
         </div>
         <footer class="article-footer">
@@ -538,7 +577,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/02/21/Hexo-blog-make-01/" data-id="cjezuwh4g0004690tmqv4uar8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/02/21/Hexo-blog-make-01/" data-id="cjezyk5r30004nm0tqe4s824t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
