@@ -14,7 +14,7 @@ date: 2018-02-21 21:53:51
 ## Github Blog?
 알 사람은 알겠지만 Github은 Repository를 개설한 뒤 Settings에 있는
 GitHub Pages 라는 설정을 통해 웹 페이지를 개설 할 수 있다.
-<!-- more -->
+
 해당 설정은 root 디렉토리의 index.html을 통해서 웹페이지를 제공하는 서비스인데
 Github을 이용하는 수많은 개발자들, 스타트업, 혹은 일반기업들도
 해당 설정을 통해서 자신만의 포트폴리오를 만들거나 
