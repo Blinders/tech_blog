@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/25/hexo-blog-make-02/index.html">
 <meta property="og:site_name" content="Grey Tech Blog">
 <meta property="og:description" content="Jekyll vs hexo앞 선 포스팅에서 Github Page를 좀 더 편하게 구성해주는 플랫폼에Jekyll과 Hexo라는 아이들이 있는 것을 언급했다. 그러면 이제 둘 중 어느 것을 사용할 것인가를 정해야 하는 단계인데, 간단히 비교를 해보자면. Jekyll의 장점은  Github Page의 기본 지원체제. Git 히스토리를 통한 이력관리가 가능. He">
-<meta property="og:updated_time" content="2018-02-25T07:57:59.408Z">
+<meta property="og:updated_time" content="2018-03-21T15:35:05.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Hexo] Github Page로 블로그 만들기 02">
 <meta name="twitter:description" content="Jekyll vs hexo앞 선 포스팅에서 Github Page를 좀 더 편하게 구성해주는 플랫폼에Jekyll과 Hexo라는 아이들이 있는 것을 언급했다. 그러면 이제 둘 중 어느 것을 사용할 것인가를 정해야 하는 단계인데, 간단히 비교를 해보자면. Jekyll의 장점은  Github Page의 기본 지원체제. Git 히스토리를 통한 이력관리가 가능. He">
@@ -193,12 +193,13 @@
 </ol>
 <p>아무래도 Jekyll이 Github Page에서 지원하는 플랫폼이다보니 가져다 쓸 수 있는 테마가 적다.<br>하지만 그렇다고해서 월등히 차이가 난다, 라는 느낌까진 아니고 Jekyll이 100이라면 Hexo는 80쯤 되는 느낌이다.</p>
 <p>2번 항목이 오히려 조금 문제일 수도 있는데 Hexo는 명령어를 통한 자체 빌드와 배포를 통해서<br>매번 완성된 하나의 파일(index.html)을 생성하는 방식으로 서비스를 제공한다.<br>위에서도 언급했지만 이런 경우 Git 히스토리는 기존의 파일에 대한 수정으로 보는 것이 아니라<br>기존 파일이 삭제 되고 아예 새로운 파일이 생성되었다고 판단하기 때문에 Git 히스토리를 통한 이력관리가 힘들어진다.<br>또한 css파일등을 보더라도 이 값이 어느 파일에서 기인한건지를 판단할 수 없기때문에 이 또한 이력관리에 애로사항으로 볼 수 있다.</p>
+<hr>
 <h2 id="그랬지만-결론은-Hexo"><a href="#그랬지만-결론은-Hexo" class="headerlink" title="그랬지만 결론은 Hexo"></a>그랬지만 결론은 Hexo</h2><p>결국 둘 중 무얼 할까 고민을 했다.</p>
 <p>Jekyll-Ruby의 경우 잠깐이지만 사용해 본 경험이 있기에(조금의 공부야 필요하겠지만) 어색하지도 않았고<br>엔터프라이즈급 대형 서비스를 호스팅 할 것도 아니기 때문에 Ruby의 느린 속도라는 단점도 감내할 수준이었다.</p>
 <p>Hexo의 경우도 Git 히스토리를 통한 이력관리가 불가능한 단점이지만<br>이는 어디까지나 빌드&amp;배포 후 정적파일에 대한 이력관리가 불가능한 것이지<br>PC에 있는 파일들에 대한 이력관리까지 불가능 한 것은 아니었다.<br>즉, 별도의 Repository를 하나 더 생성해서 거기서 관리하면 되는 것이었다.</p>
 <p>결국 최종 선택은 <strong>Hexo</strong>였는데, 위에 주구장창 장단점을 비교한 것과는 달리 선택 사유는 심플했다.</p>
 <p>하려는 것이 블로그이니 만큼 <strong>블로그의 목적에 맞는 테마가 있는 걸로 선택</strong>하기로 한 것이다.<br>(어차피 포스트 내용은 파일로써 남을 거고, 둘다 Markdown은 지원하니까)</p>
-<p>이런 저런 테마를 찾아보던 중 Pilsner가 사내 금요토크에서 사용한 <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">icarus 테마</a>가 딱 마음에 들었다.<br>(카테고리&amp;아카이브 기능, 심플한 디자인, 넓은 포스트 영역, 페이징, Internal Search 기능등)</p>
+<p>이런 저런 테마를 찾아보던 중 Pilsner가 사내 금요토크에서 사용한 <a href="https://github.com/Blinders/hexo-theme-icarus" target="_blank" rel="noopener">icarus 테마</a>가 딱 마음에 들었다.<br>(카테고리&amp;아카이브 기능, 심플한 디자인, 넓은 포스트 영역, 페이징, Internal Search 기능등)</p>
 <p>해당 테마를 눈여겨 봐두고 있다가 결국 오늘(18.02.15), 결행을 감행했고 이 블로그가 탄생하게 되었다.</p>
 
         
@@ -210,7 +211,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-02/" data-id="cjezyk5r90005nm0tybuvk8xi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-02/" data-id="cjf1a9aea0005pg0tjcwf8ik1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -325,6 +326,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/03/21/hexo-blog-make-04/" class="title">[Hexo] Github Page로 블로그 만들기 04</a></p>
+                            <p class="item-date"><time datetime="2018-03-21T13:27:07.000Z" itemprop="datePublished">2018-03-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
                             <p class="item-title"><a href="/tech_blog/2018/02/25/hexo-blog-make-03/" class="title">[Hexo] Github Page로 블로그 만들기 03</a></p>
                             <p class="item-date"><time datetime="2018-02-25T07:57:21.000Z" itemprop="datePublished">2018-02-25</time></p>
                         </div>
@@ -366,7 +376,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">4</span></li></ul>
         </div>
     </div>
 

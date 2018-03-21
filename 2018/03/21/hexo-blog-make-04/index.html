@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[Hexo] Github Page로 블로그 만들기 04 | Grey Tech Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="마지막 포스팅이 2월 25일이라니, 근 한 달만에 포스팅이다. 사실 포스팅을 한 지 이렇게 오래 됐는지 몰랐다. 틈틈히 글을 써왔어야 했는데..마지막 포스팅과 지금 사이에 물리적 간극은 여느때와 다름 없었지만 개인적으론 12년지기와 함께한 7일간의 베트남 여행을 다녀오고기술 블로그와 병행하기로 한 글 블로그 개설 작업을 비롯해서여행 일지 정리를 하다보니 기">
+<meta name="keywords" content="hexo,web,blog,github,develop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Hexo] Github Page로 블로그 만들기 04">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/hexo-blog-make-04/index.html">
+<meta property="og:site_name" content="Grey Tech Blog">
+<meta property="og:description" content="마지막 포스팅이 2월 25일이라니, 근 한 달만에 포스팅이다. 사실 포스팅을 한 지 이렇게 오래 됐는지 몰랐다. 틈틈히 글을 써왔어야 했는데..마지막 포스팅과 지금 사이에 물리적 간극은 여느때와 다름 없었지만 개인적으론 12년지기와 함께한 7일간의 베트남 여행을 다녀오고기술 블로그와 병행하기로 한 글 블로그 개설 작업을 비롯해서여행 일지 정리를 하다보니 기">
+<meta property="og:updated_time" content="2018-03-21T16:08:13.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Hexo] Github Page로 블로그 만들기 04">
+<meta name="twitter:description" content="마지막 포스팅이 2월 25일이라니, 근 한 달만에 포스팅이다. 사실 포스팅을 한 지 이렇게 오래 됐는지 몰랐다. 틈틈히 글을 써왔어야 했는데..마지막 포스팅과 지금 사이에 물리적 간극은 여느때와 다름 없었지만 개인적으론 12년지기와 함께한 7일간의 베트남 여행을 다녀오고기술 블로그와 병행하기로 한 글 블로그 개설 작업을 비롯해서여행 일지 정리를 하다보니 기">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/tech_blog/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/tech_blog/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/tech_blog/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/tech_blog/css/style.css">
+
+    <script src="/tech_blog/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/tech_blog/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/tech_blog/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/tech_blog/" id="logo">
+                
+                <span class="site-title">Grey Tech Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/tech_blog/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/tech_blog/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tech_blog/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/tech_blog/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/tech_blog/',
+        CONTENT_URL: '/tech_blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/tech_blog/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/tech_blog/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/tech_blog/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tech_blog/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/tech_blog/about">About</a></td>
+                
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer main-inner">
+            
+            <section id="main"><article id="post-hexo-blog-make-04" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            [Hexo] Github Page로 블로그 만들기 04
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/tech_blog/2018/03/21/hexo-blog-make-04/">
+            <time datetime="2018-03-21T13:27:07.000Z" itemprop="datePublished">2018-03-21</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/tech_blog/categories/Web/">Web</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tech_blog/tags/blog/">blog</a>, <a class="tag-link" href="/tech_blog/tags/develop/">develop</a>, <a class="tag-link" href="/tech_blog/tags/github/">github</a>, <a class="tag-link" href="/tech_blog/tags/hexo/">hexo</a>, <a class="tag-link" href="/tech_blog/tags/web/">web</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>마지막 포스팅이 2월 25일이라니, 근 한 달만에 포스팅이다.</p>
+<p>사실 포스팅을 한 지 이렇게 오래 됐는지 몰랐다. 틈틈히 글을 써왔어야 했는데..<br>마지막 포스팅과 지금 사이에 물리적 간극은 여느때와 다름 없었지만</p>
+<p>개인적으론 12년지기와 함께한 7일간의 베트남 여행을 다녀오고<br>기술 블로그와 병행하기로 한 <a href="https://blinders.github.io/writing" target="_blank" rel="noopener">글 블로그</a> 개설 작업을 비롯해서<br>여행 일지 정리를 하다보니 기술 블로그 쪽 포스팅을 잊고 지내게 되었다.</p>
+<p>그러다 어제 문득 이카루스 테마 관련 글을 스스로가 참고하고자 기술 블로그를 열었는데…<br>이럴수가, 테마를 적용하는 파트까지도 적어놓지 않았다니??</p>
+<p>난 당연히 테마를 적용하는 부분까지는 포스팅을 한 줄 알았는데, 겨우 개설만 해놓고 멈췄다니..<br>그래서 마저 포스팅을 하기 위해, 이번 포스팅을 작성한다.</p>
+<p>이제 기본 landscape 테마가 아닌, 예쁘게 만들어진 템플릿들을 이용해서 블로그를 꾸며보자.</p>
+<hr>
+<h2 id="테마를-넣어보-기전에"><a href="#테마를-넣어보-기전에" class="headerlink" title="테마를 넣어보..기전에."></a>테마를 넣어보..기전에.</h2><p>일단 내 포스팅에 사용된 Hexo의 테마는 <a href="https://github.com/Blinders/hexo-theme-icarus" target="_blank" rel="noopener">이카루스 테마</a>임을 밝혀둔다.</p>
+<p>| 링크된 이클립스 테마는 포크(folk)를 통해 아래와 같은 사항들이 커스터마이징 된 테마다.<br>| 1. 헤더 고정<br>| 2. 모바일 해상도에 따른 Search box 배치 변경<br>| 3. 배경 색 변경</p>
+<p>예시로 사용할, 그리고 지금보고 있는 블로그에도 사용된 이카루스 테마 말고도 Hexo는 190여개가 넘는 테마를 제공하는데<br>더 많은 테마는 <a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">Hexo Theme 사이트</a>에서 확인할 수 있다.</p>
+<p>직접 들어가서 보면 알겠지만 생각보다 다양한 테마들이 있으며 애초에 Hexo가 Node.js를 기반으로 이루어져 있기에<br>테마를 받아서 열어보면 node.js를 공부할때 튜토리얼에 늘상 나오는 ejs 파일들과 yml파일들, 그 외 css와 js파일들을 확인할 수 있다.</p>
+<p>다만 다양한 테마가 있는만큼 테마들의 사용법도 다양하다.<br>물론 기본적인 사용방법은 같지만, 정말 기본적인 수순까지다.<br>이번에 글을 위한 블로그를 개설하면서 이카루스 외에 다른 테마로 가져가기 위해 두,세가지 정도의 테마를 사용해봤는데<br>각 테마마다 config.yml의 내용도 달라지고 어떤 테마는 grundle을 사용하는 테마도 있으며<br>css도 less나 sass등 테마를 만든 사람의 입맛에 맞게 구성되어 있었다.</p>
+<p>물론 이런 파일적인 측면뿐만이 아니라 기능에서도 테마마다 차이가 있는데<br>search 엔진도 제각각이고 카테고리, 태그 기능이 아예 없이 이쁘기만 한 곳도 있으며<br>사진을 보여주는 라이브러리도 어떤 곳은 오픈된 라이브러리를 통해 이쁘게 보여주지만<br>어떤 곳은 그냥 일반형태로 보여주는 등..그야말로 천차만별이었다.</p>
+<p>따라서 이 포스팅을 통해서 테마를 적용한다면, 그저 기본적인 형태의 테마 사용법 + 이카루스 테마에 대한 이야기 정도를 알아갈 수 있을 것이다.</p>
+<hr>
+<h2 id="테마를-적용해보자-공통"><a href="#테마를-적용해보자-공통" class="headerlink" title="테마를 적용해보자(공통)"></a>테마를 적용해보자(공통)</h2><p>일단 테마를 적용하기 위해선, 당연한 말이지만 적용하고픈 테마를 찾아야 한다.<br>물론 난 이런거 필요없어. CSS 따윈 씹어먹어주지! 라고 하시는 분들은 본 포스팅을 패스하시고<br>직접 장인의 손길을 담아 한땀한땀 블로그를 구성하셔도 된다고 미리 말씀을 드린다.</p>
+<p>하지만 세상엔 능력자가 많고 나보다 미적감각이 뛰어난 이들은 얼마든지 있다.<br>나는 나를 과신할 정도로 능력을 맹신하지 못 하기에 <a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">Hexo Theme 사이트</a>를 뒤지며 모든 테마를 검토했다.<br>물론 2편에도 언급했듯 Pilsner를 통해 이카루스 테마를 점지해두고 있었지만<br>보다 이쁘고 내 활용용도에 맞는 테마가 있다면 얼마든지 다른 테마를 이용할 용의가 있었다.</p>
+<p>테마를 살펴볼때 고려한 사항들은 여러가지였지만 일단 중요했던 건 카테고리와 태그 기능의 여부였다.<br>기술 블로그로써의 목적이었고 포스팅을 한다면 Web, Android, Spring등으로 카테고라이징은 필수라고 생각했고<br>거기에 태그 기능까지 있다면 차후 검색을 통해 찾기에도 제법 유용할 거라고 생각했기 때문이다.</p>
+<p>그 외에 추가로 고려된 사항들이 UX 쪽의 세부사항들이었는데,<br>블로그이다보니 포스팅이 길어질 거고 스크롤을 내릴때 메뉴들은 고정인가에서부터<br>페이징인지 인피니티 스크롤인지, Search 엔진은 무엇을 썼는지등이 고려사항으로 적용되었다.</p>
+<p>그러고 최종적으로 후보에 있던 것이 실제로 사용한 icarus와 <a href="http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/" target="_blank" rel="noopener">tranquilpeak</a>였는데 당시만해도<br>icarus는 기술 블로그로, tranquilpead는 글 블로그의 테마로 사용하기로 마음먹었었다.<br>(현재는 두 블로그 모두 icarus 테마를 사용중이다. 왜 그랬는지는 차후 포스팅에서 밝히기로 하겠다)</p>
+<p>그래서 이제 마음에 드는 테마를 찾았다면 <a href="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/" target="_blank" rel="noopener">[Hexo] Github Page로 블로그 만들기 03</a>에서 언급했던 hexo blog의 기본 디렉토리 구조를 떠올려보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tech-blog</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">|   ├── draft.md</span><br><span class="line">|   ├── page.md</span><br><span class="line">|   ├── post.md</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></p>
+<p>가장 하단부를 보면 버젓이 themes라는 디렉토리가 있음을 확인할 수 있다.<br>그냥 봐도 직관적으로 아, 저기에 테마관련 파일들을 넣어두면 되겠구나, 라는 생각이 들 것이다.</p>
+<p>hexo에서 기본적으로 제공하는 테마는 landscape 테마다.<br>지금 <code>hexo server</code> 명령어 통해 서버를 올리면 까만 우주에 태양인지 뭔지 모를 빛무리가 떠오르는 배경이 있는 그 테마.</p>
+<p>테마를 적용하는 방법은 의외로 간단하다.</p>
+<ol>
+<li>themes 디렉토리로 이동을 한다.</li>
+<li>그 위치에서 테마가 올라가있는 git repository를 clone 한다.</li>
+<li>_config.yml의 theme 값을 생성된 디렉토리의 명으로 해준다(보통은 테마의 이름이 디렉토리 명이다) </li>
+</ol>
+<p>이렇게 3단계를 해주고 <code>hexo server</code> 명령어를 적용해주면 본인이 콕 짚은 테마가 적용된 블로그를 볼 수 있다<br>(혹시나 제대로 나오지 않는다면 <code>hexo clean</code>을 해보고 서버를 올리도록 하자)</p>
+<p>그 뒤에 웹 브라우저상의 상단 타이틀이나 description등을 고치고 싶다면<br>root 디렉토리의 _config.yml 파일에서 아래와 같은 항목을 고쳐주도록 하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Grey Title # 좌상단 메인 타이틀 겸 브라우저 상단 타이틀</span><br><span class="line">subtitle: Grey SubTitle </span><br><span class="line">description: Grey Description </span><br><span class="line">author: Grey Lee Author # 하단(Footer)에 추가 됨</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="테마를-적용해보자-icarus"><a href="#테마를-적용해보자-icarus" class="headerlink" title="테마를 적용해보자(icarus)"></a>테마를 적용해보자(icarus)</h2><p>위의 설명을 따라 이용하고픈 테마를 적용시켰다면, 그 다음부터는 해당 테마가 제공하는 가이드를 참고하기 바란다.<br>이미 언급했지만 테마들 마다 사용하는 방법이나 스펙이 전부 다르기때문에 그 모든 것을 포스팅하는 것은 불가능하다.<br>(아니 뭐..물론 190여개를 다 해볼수야 있겠지만..테마 전문 리뷰어도 아니고, 굳이…?)</p>
+<p>그래서 여기부터는 이카루스 테마를 사용한 사람들을 위한 추가 가이드이다.</p>
+<h3 id="1-일단-Search-엔진을-좀-사용해봅시다"><a href="#1-일단-Search-엔진을-좀-사용해봅시다" class="headerlink" title="1. 일단 Search 엔진을 좀 사용해봅시다."></a>1. 일단 Search 엔진을 좀 사용해봅시다.</h3><p>이카루스 테마는 우상단부에 Search Box를 기본으로 제공한다.<br>다만 Search Box UI는 제공하는데 기능은 추가적으로 npm package를 설치해 줘야한다.<br>(UI는 있는데 기능은 없다니..github deploy 때도 그랬지만, 왜 이렇게 해놓은 건지는 모르겠다.)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/alexbruno/hexo-generator-json-content" target="_blank" rel="noopener">hexo-generator-json-content</a>는 hexo 블로그 내부의<br>page나 post형태의 글에 대해서 json 형식으로 검색 엔진을 제공한다고 한다. 트위터의 미리보기나 ajax를 통한 사이트 검색등에 유용하다나 뭐라나..<br>제공되는 Github Repository의 설명을 보면 _config.yml에 일부 옵션 값을 명시함으로서 커스터마이징하게 사용할 수 있을 것 같지만<br>그 부분은 차후에 시간을 별도로 할애해서 직접 해보고 포스팅을 추가하든지 해야겠다.</p>
+<p>일단, 지금은 디폴트 상태의 insight search 기능을 추가해보도록 하자.<br>…라고 하지만 위와 같이 npm package를 설치하는 걸로 끝이다.</p>
+<p>더 정확하게는 이카루스 테마 디렉토리 내부의 _config.tml에 아래와 같이 옵션값을 true로 설정해줘야 하지만<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Search</span><br><span class="line">search:</span><br><span class="line">    insight: true</span><br></pre></td></tr></table></figure></p>
+<p>설정해주지 않아도 괜찮다. 애초에 기본값이 true 다.</p>
+<p>이것으로 생성된 블로그 내부에서 검색기능을 사용할 수 있게 되었다.<br>Search Box를 누르면 모달창과 같은 검색창이 나올 것이고 키워드를 입력하면 타이틀, 내용에 상관없이 전수검색이 적용되는 것을 확인할 수 있다.</p>
+<h3 id="2-카테고리랑-테마를-눌렀-응-404…"><a href="#2-카테고리랑-테마를-눌렀-응-404…" class="headerlink" title="2. 카테고리랑 테마를 눌렀..응? 404…?"></a>2. 카테고리랑 테마를 눌렀..응? 404…?</h3><p>이제 search 엔진도 적용시켰겠다..본격적으로 포스팅을 하고 블로그 관리를 하면 된다고 생각했었다.<br>그리고 적용된 테마가 신기해서 이곳저곳을 누르다가<br>상단 메뉴의 카테고리와 태그를 눌러보면 404가 뜨는 걸 볼 수 있다.</p>
+<p>아마 창세기처럼 새하얀 바탕에 Get/~~~~ 어쩌구 에러메시지가 본인들을 반겨줄 것이다.</p>
+<p>처음엔 이게 뭐야, 내가 또 설정을 어디서 삐꾸냈나? 하고 한참을 헤맸더랬다.<br>그러다 발견한 이카루스 Github Repository의 wiki를 보다보니</p>
+<p><em>If you want enable the Categories and Tags for your blog, please copy _source/categories and _source/tags folder to sources folder under your site’s root folder, and then add menu to your _config.yml.</em></p>
+<p>라는 안내 문구가 있었다. </p>
+<p>(직역주의)<br>만약 너님이 허용하려면, 카테고리 그리고 태그를 너의 블로그를 위해.<br>부디 복사해라 _source/categories 그리고 _source/tags 폴더를, 너의 사이트 root 아래에 source 폴더로.<br>그리고 _config.yml에 메뉴항목으로 추가해라.</p>
+<p>..아,음 새벽 1시쯤이라 그냥 드립을 좀 해보려한..겁니다.<br>네, 그냥 이카루스 테마 아래에 있는 _source/categories랑 _source/tags 폴더를 root/source로 복사해주시고<br>_config.yml 상단에 있는 menu 항목에 해당 정보를 추가해주면 된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Menus</span><br><span class="line">menu: # 요 아래 뒤에 붙는 건 URL임. 그러니까..깃헙 기준으로 보자면</span><br><span class="line">  # Home: . # 얘는 http://localhost:4000/tech_blog/</span><br><span class="line">  Archives: archives # 얘는 http://localhost:4000/tech_blog/archives</span><br><span class="line">  Categories: categories # 얘는 http://localhost:4000/tech_blog/categories 뭐 이런 식</span><br><span class="line">  Tags: tags</span><br><span class="line">  About: about</span><br></pre></td></tr></table></figure></p>
+<p>위 코드에도 적어놨지만 좌측의 값이 화면 상단 메뉴바에 표시되는 텍스트이고<br>우측의 값은 사용하는 URL의 뒤에 붙는 값이다.</p>
+<p>이렇게 폴더를 복사하고 _config.yml 에 추가함으로써 탈 없이 카테고리와 태그를 사용할 수 있다.</p>
+<p>그리고 이 쯤에서 포스팅을 하며 문득 떠오른 기억이지만 블로그에 테마를 적용하고<br>기본적인 메뉴구성을 한 것이 한 달도 전이라..정확히 기억이 나질 않는데<br>아마 About 메뉴도 이와 비슷한 에러가 있었던 것 같다.<br>(이래서 제때제때 포스팅을 해야 하는 것인데..)</p>
+<p>참고로 위에 인용된 문구를 보면 알겠지만 이카루스에서도 카테고리와 태그에 대해서만 언급하고 있다.<br>(그래서 나마저도 기억이 가물가물한 거다..처음부터 about 디렉토리가 source 아래에 있던 건지 내가 옮긴건지…)</p>
+<p>혹시나 About도 404와 같은 에러가 난다면 카테고리와 태그 폴더를 복사해서 옮겼듯이<br>About 또한 이카루스 테마 디렉토리의 _source/about 을 복사해서 동일한 위치에 가져다 놓도록 하자.<br>그러고 about 디렉토리 아래의 index.md를 수정하면 화면에서도 잘 동작하는 것을 확인할 수 있다.</p>
+<p>번역해보면 카테고리랑 태그 메뉴를 사용하려면 이카루스 테마 디렉토리 내부의 폴더 2개를 root/source로 옮겨줘야 한다는 거다.</p>
+<hr>
+<p>일단 오늘 포스팅은 여기까지.<br>다음에는 _config.yml을 통해서 일부 설정을 변경하는 내용을 포스팅할 예정이다.<br>그러고나면 <a href="https://disqus.com" target="_blank" rel="noopener">Disqus</a>을 이용해서 Comment를 넣는 부분도 포스팅할 예정이다.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/03/21/hexo-blog-make-04/" data-id="cjf1a9aem0009pg0t015fecdl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/tech_blog/2018/02/25/hexo-blog-make-03/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">[Hexo] Github Page로 블로그 만들기 03</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/03/21/hexo-blog-make-04/" class="title">[Hexo] Github Page로 블로그 만들기 04</a></p>
+                            <p class="item-date"><time datetime="2018-03-21T13:27:07.000Z" itemprop="datePublished">2018-03-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/02/25/hexo-blog-make-03/" class="title">[Hexo] Github Page로 블로그 만들기 03</a></p>
+                            <p class="item-date"><time datetime="2018-02-25T07:57:21.000Z" itemprop="datePublished">2018-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/02/25/hexo-blog-make-02/" class="title">[Hexo] Github Page로 블로그 만들기 02</a></p>
+                            <p class="item-date"><time datetime="2018-02-25T06:57:22.000Z" itemprop="datePublished">2018-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/02/21/Hexo-blog-make-01/" class="title">[Hexo] Github Page로 블로그 만들기 01</a></p>
+                            <p class="item-date"><time datetime="2018-02-21T12:53:51.000Z" itemprop="datePublished">2018-02-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/tech_blog/2018/02/18/intro/" class="title">Intro</a></p>
+                            <p class="item-date"><time datetime="2018-02-18T13:16:00.000Z" itemprop="datePublished">2018-02-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tech_blog/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tech_blog/tags/develop/" style="font-size: 10px;">develop</a> <a href="/tech_blog/tags/github/" style="font-size: 10px;">github</a> <a href="/tech_blog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tech_blog/tags/web/" style="font-size: 10px;">web</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Grey Lee<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/tech_blog/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/tech_blog/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/tech_blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/tech_blog/js/main.js"></script>
+
+    </div>
+</body>
+</html>
