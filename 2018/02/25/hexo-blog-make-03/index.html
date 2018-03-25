@@ -9,7 +9,7 @@
 <meta name="keywords" content="hexo,web,blog,github,develop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Hexo] Github Page로 블로그 만들기 03">
-<meta property="og:url" content="http://yoursite.com/2018/02/25/hexo-blog-make-03/index.html">
+<meta property="og:url" content="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/index.html">
 <meta property="og:site_name" content="Grey Tech Blog">
 <meta property="og:description" content="Hexo 시작해보기앞 선 포스팅에서 밝혔지만 지금 보는 블로그 icarus 테마가 적용되어있다. 사실 블로그를 만들어야 겠다는 생각은, Intro 포스팅을 보면 알겠지만 오래된 생각이다.그러다 더 이상 미루고 미루다가는 절대 안 할 거 같은 수동적 성격의 나를 채찍질해서 집 근처 스벅으로 오게되었다.(사실은 설 귀성 기차가 저녁 6시라 이때다 싶었다..)">
 <meta property="og:updated_time" content="2018-03-21T15:35:42.192Z">
@@ -166,7 +166,7 @@
         
             
             <h2 id="Hexo-시작해보기"><a href="#Hexo-시작해보기" class="headerlink" title="Hexo 시작해보기"></a>Hexo 시작해보기</h2><p>앞 선 포스팅에서 밝혔지만 지금 보는 블로그 <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">icarus 테마</a>가 적용되어있다.</p>
-<p>사실 블로그를 만들어야 겠다는 생각은, <a href="https://blinders.github.io/tech_blog/2018/02/18/intro/" target="_blank" rel="noopener">Intro 포스팅</a>을 보면 알겠지만 오래된 생각이다.<br>그러다 더 이상 미루고 미루다가는 절대 안 할 거 같은 수동적 성격의 나를 채찍질해서 집 근처 스벅으로 오게되었다.<br>(사실은 설 귀성 기차가 저녁 6시라 이때다 싶었다..)</p>
+<p>사실 블로그를 만들어야 겠다는 생각은, <a href="https://blinders.github.io/tech_blog/2018/02/18/intro/">Intro 포스팅</a>을 보면 알겠지만 오래된 생각이다.<br>그러다 더 이상 미루고 미루다가는 절대 안 할 거 같은 수동적 성격의 나를 채찍질해서 집 근처 스벅으로 오게되었다.<br>(사실은 설 귀성 기차가 저녁 6시라 이때다 싶었다..)</p>
 <hr>
 <h3 id="Github-작업거리"><a href="#Github-작업거리" class="headerlink" title="Github 작업거리"></a>Github 작업거리</h3><p>블로그를 만들기 위해서는 무엇보다도<br><strong>첫 번째, 블로그를 서비스할 Github repository를 생성</strong>해야 한다.<br>내 경우에는 tech_blog라는 이름의 repository를 생성하고<br>Settings 에서 Github Page 를 master 브랜치로 설정 후 Save 해줬다.<br>(굳이 master 브랜치가 아니라 다른 브랜치로 해도 상관은 없다.<br>다만 일부 repository의 경우 로컬에서 master 브랜치로 Direct Push가 안 되는 경우도 있으니<br>이 경우엔 Github Page 서비스 브랜치를 다른 걸로 바꾸거나<br>다른 브랜치에 Push해서 Pull Request를 날리도록 하자.)</p>
 <hr>
@@ -221,7 +221,7 @@
 <p>저는 애초에 Gitub을 통해서 여러개의 블로그를 운영할 계획이었습니다.<br>메인 블로그(개인 프로필과 서브 블로그들의 링크만 담당)가 있고<br>기술 블로그, 글, 사진 블로그등을 생성할 생각이기 때문에<br>일부러 Repository의 이름에도 tech라는 단어를 넣어서 tech_blog로 한 것인데요.</p>
 <p><strong>여기서 문제가 발생</strong>한 겁니다.</p>
 <p>커스터마이징이 가능한 대부분의 서비스(앱이든 홈페이지든 뭐가 됐든)는<br>최소한의 기능만을 디폴트로 제공하고 너님이 필요하시면 수정해서 쓰세요, 라는 것이 정석입니다.<br>hexo도 당연히 그런 불문율을 따르고 있구요. Github 또한 그렇습니다.</p>
-<p><strong>그 중에 하나가 바로 Github Page의 URL 규칙</strong>인데요.<br>기본적으로 <strong>Github은 username을 바탕으로 Page의 URL을 제공</strong>합니다.<br>제 Username인 blinders를 예로 들자면 <a href="https://blinders.github.io/" target="_blank" rel="noopener">https://blinders.github.io/</a> 의 형태가 디폴트입니다.<br>즉, <a href="https://username.github.io/" target="_blank" rel="noopener">https://username.github.io/</a> 의 형태이지요.<br>(이에 대한 건 <a href="https://blinders.github.io/tech_blog/2018/02/21/Hexo-blog-make-01/" target="_blank" rel="noopener">[Hexo] Github Page로 블로그 만들기 01</a>의 아래 별첨에도 포스팅했습니다)</p>
+<p><strong>그 중에 하나가 바로 Github Page의 URL 규칙</strong>인데요.<br>기본적으로 <strong>Github은 username을 바탕으로 Page의 URL을 제공</strong>합니다.<br>제 Username인 blinders를 예로 들자면 <a href="https://blinders.github.io/">https://blinders.github.io/</a> 의 형태가 디폴트입니다.<br>즉, <a href="https://username.github.io/" target="_blank" rel="noopener">https://username.github.io/</a> 의 형태이지요.<br>(이에 대한 건 <a href="https://blinders.github.io/tech_blog/2018/02/21/Hexo-blog-make-01/">[Hexo] Github Page로 블로그 만들기 01</a>의 아래 별첨에도 포스팅했습니다)</p>
 <p>그럼 여기서 내가 별도로 생성한 Repository에 블로그를 생성한다면?<br>네, <strong>URL의 기본형태는 <a href="https://username.github.io/RepoName" target="_blank" rel="noopener">https://username.github.io/RepoName</a></strong>가 됩니다.<br>그리고 Github에서 저 URL을 root로 잡아버리기 때문에,<br>정적인 파일로 떨궈서 서비스하는 hexo의 경우에는<br>필요한 resource들의 경로를 제대로 잡지 못 하는 문제가 발생합니다.<br>(아,내가 이것 때문에 얼마나 허망한 구글링의 시간을 보냈던가ㅠㅠ)</p>
 <p>이건 어떻게 해결해야 할까요?<br>당연하게도 Github Page에서 명명한 URL 규칙을 우리가 바꿀 수는 없으니<br>hexo의 설정을 건드려줘야 합니다. 네, root 디렉토리의 _<em>config.yml</em> 에 해당 설정관련 값이 있습니다.</p>
 <p>_<em>config.yml</em> 을 열어보면 상단에</p>
@@ -247,7 +247,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/02/25/hexo-blog-make-03/" data-id="cjf6chegp0008qj0tbw8fg5d1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/" data-id="cjf6dqiow0008sj0tgm95sekg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -315,7 +315,7 @@
 
             
     
-        <a href="http://yoursite.com/2018/02/25/hexo-blog-make-03/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/02/25/hexo-blog-make-03/">Comments</a>
+        <a href="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/">Comments</a>
     
 
         </footer>
@@ -452,7 +452,7 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2018/02/25/hexo-blog-make-03/';
+            this.page.url = 'https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/';
         
         this.page.identifier = 'hexo-blog-make-03';
     };
