@@ -170,42 +170,42 @@
 <hr>
 <h3 id="Github-작업거리"><a href="#Github-작업거리" class="headerlink" title="Github 작업거리"></a>Github 작업거리</h3><p>블로그를 만들기 위해서는 무엇보다도<br><strong>첫 번째, 블로그를 서비스할 Github repository를 생성</strong>해야 한다.<br>내 경우에는 tech_blog라는 이름의 repository를 생성하고<br>Settings 에서 Github Page 를 master 브랜치로 설정 후 Save 해줬다.<br>(굳이 master 브랜치가 아니라 다른 브랜치로 해도 상관은 없다.<br>다만 일부 repository의 경우 로컬에서 master 브랜치로 Direct Push가 안 되는 경우도 있으니<br>이 경우엔 Github Page 서비스 브랜치를 다른 걸로 바꾸거나<br>다른 브랜치에 Push해서 Pull Request를 날리도록 하자.)</p>
 <hr>
-<h3 id="로컬-작업거리"><a href="#로컬-작업거리" class="headerlink" title="로컬 작업거리"></a>로컬 작업거리</h3><p>상세한 포스팅을 보기 전에, hexo로 블로그를 띄우는 명령어만 순서대로 뽑아보면 아래와 같다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init tech_blog</span><br><span class="line">npm intall</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<h3 id="로컬-작업거리"><a href="#로컬-작업거리" class="headerlink" title="로컬 작업거리"></a>로컬 작업거리</h3><p>상세한 포스팅을 보기 전에, hexo로 블로그를 띄우는 명령어만 순서대로 뽑아보면 아래와 같다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init tech_blog</span><br><span class="line">npm intall</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
 <p><strong>겨우 4줄!</strong><br>겨우 4줄만 터미널에 입력해주면 나만의 블로그가 생성되는 것이다.</p>
 <p>자, 이제 일련의 과정을 좀 상세히 풀어보겠다.<br>Github의 준비는 끝났으니 이제는 로컬에서 필요한 작업을 해 줄 차례다.</p>
 <p>사실 hexo는 예전에 회사에서 사내 Github 도입기념으로 사내 블로그나 만들어볼까 싶어 건드린 적이 있었다.<br>(이라고 하기엔 벌써 몇 달 전이니 그게…사실 써봤던 녀석이라 ‘Jekyll vs Hexo’에서 선택된 이유 중 하나다.)</p>
 <p>앞 선 포스팅에서도 말했듯이 hexo는 npm을 이용해서 설치를 해준다.<br>그렇기에 Node.js가 설치되어 있지 않다면 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">이 링크</a>를 통해 설치해주길 바란다.</p>
 <p>Node.js가 설치 완료되었다면 hexo로 블로그 관련 파일들을 생성할 디렉토리로 이동한 뒤<br>터미널(window는 cmd나 powershell)을 열어준다.</p>
-<p>npm을 통해 hexo를 설치해주기 위한 명령어는 아래와 같다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<p>npm을 통해 hexo를 설치해주기 위한 명령어는 아래와 같다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
 <p>위 명령어로 hexo 를 global(어디서 터미널을 열든 hexo 명령어를 쓰겠다는)로 설치한다.<br>(..하려 했는데 root 권한이 필요하다. <code>sudo -s</code> 로 유저를 root로 변경 설치해주세요)</p>
-<p>다음으로 현 위치(블로그 관련 파일들을 받을 디렉토리)에서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init tech_blog</span><br></pre></td></tr></table></figure></p>
+<p>다음으로 현 위치(블로그 관련 파일들을 받을 디렉토리)에서<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init tech_blog</span><br></pre></td></tr></table></figure></p>
 <p>를 입력한다.</p>
 <p>hexo init 만 입력해도 블로그 관련 파일들이 생성되는데는 문제가 없다.</p>
 <p>다만, 뒤에 디렉토리명을 붙이면 동명의 디렉토리가 생성되면서 거기에 파일들이 생성되는 것이다.<br>hexo init 를 했을 때의 <strong>주의점은 명령어를 실행한 위치에 파일들이 생성되기 때문에 해당 디렉토리에는 그 어떤 파일도 있어서는 안 된다는 것</strong>이다.<br>만약 단 하나의 텍스트 파일정도만 존재해도 hexo init 명령어는 Error 메시지를 뱉으면서 생성에 실패하게 된다.</p>
 <p>hexo init 후 조금만 기다리면 콘솔이 주루루루룩 위로 넘어가더니 뙇하고 각종 파일들이 생성될 것이고<br>아마 기본적인 디렉토리 구조는 아래와 같을 것이다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tech-blog</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">|   ├── draft.md</span><br><span class="line">|   ├── page.md</span><br><span class="line">|   ├── post.md</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tech-blog</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">|   ├── draft.md</span><br><span class="line">|   ├── page.md</span><br><span class="line">|   ├── post.md</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 <p>생성된 디렉토리로 이동 후 <strong>가장 먼저 해야 할 건 dependency package를 통해서<br>package.json 에 명시된 package를 설치해주는 것</strong>이다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>을 입력해주면 또 콘솔이 주루루루룩 하면서 위로 넘어가더니 뙇하고 끝이 난다.</p>
-<p>자,이제 이 것만으로도 블로그 띄울 준비는 85%는 끝난 것이다.<br>가볍에 콘솔에 아래 명령어를 입력해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p>자,이제 이 것만으로도 블로그 띄울 준비는 85%는 끝난 것이다.<br>가볍에 콘솔에 아래 명령어를 입력해보자.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
 <p>그러면 <em><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></em> 으로 hexo server가 뜨는 것을 확인할 수 있다.<br>(hexo의 기본 테마는 landscape 로 되있기에 설정의 변경없이 그냥 서버를 띄웠다면<br>우주의 까만 배경으로 빛무리가 뜨왛하는 landscape 테마가 보이는 게 정상이다)</p>
 <p>hexo를 통해 블로그를 띄웠으니 이젠 설정에 대한 부분을 조금 설명하겠다.</p>
 <p>hexo의 모든 설정은 _<em>config.yml</em> 파일 에서 담당한다.<br>가져다쓰는 테마들은 모두 각 테마들만의 _<em>config.yml</em> 파일을 가지고 있는데<br><strong>root 디렉토리에 있는 _<em>config.yml</em> 파일이 총괄대장역할</strong>을 하며<br><strong>테마 디렉토리 안에 있는 _<em>config.yml</em> 파일들은 위치에 맞게끔 각 테마들을 담당하는 부대장</strong>이라 할 수 있다.<br>(그렇기에 root의 _<em>config.yml</em> 내부에 theme 속성 값으로 부대장을 임명하면 해당 테마가 동작하는 방식이다)</p>
 <p>root의 _<em>config.yml</em> 에서 타이틀이나 subtitle, description, root url등의<br>굵직한 설정들-총괄대장이니까-을 추가, 변경, 삭제등 관리할 수 있다.<br><em>(아래에 삽질2라는 이름으로 포스팅을 했는데, 여기서 root url 부분을 간과한게 내 뒷통수를 때렸다)</em></p>
 <p>이제 로컬에 띄운 블로그를 아~~까 만든 Github Repository에 배포해보려고 한다.<br>배포를 하려면 <strong>당연히 배포처를 지정</strong>해야 하고 hexo의 모든 설정은 _<em>config.yml</em> 이 한다고 이야기해왔다.<br>배포처 설정도 마찬가지로 _<em>config.yml</em> 에 있는데 해당 파일을 열어보면 맨 아래에</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
 <p>요런 상태로 초기 값이 텅 빈 상태일 것이다.<br>이제 여기에 위에서 생성한 Github Reposity를 설정해주면 되는데</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/GithubUsername/RepoName.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/GithubUsername/RepoName.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>위와 같은 값으로 입력하면 된다.<br><strong>type은 git</strong> 이고 <strong>repo는 배포하려는 Github Repository의 URL</strong>이 들어가며<br><strong>branch는 배포 시 push 될 타겟 브랜치</strong>를 적으면 된다.</p>
-<p>자, 이제 저기까지 설정이 끝난 상태에서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
+<p>자, 이제 저기까지 설정이 끝난 상태에서<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
 <p>명령어를 실행하면 <em>index.html</em> 을 포함해서,<br>Github Repository에 올라갈 정적 파일들이 <em>public 디렉토리</em> 아래로 생성된다. </p>
-<p>파일들의 생성을 확인했다면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>파일들의 생성을 확인했다면<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>이 명령어로 Github Repository로 hexo가 배포될 것이다.</p>
 <p>…그렇게 배포되어야 하는데…무사히 잘 올라가야 되는데…읭?<br><strong>Error Deployer not foundgit??</strong> 에러? 읭?</p>
 <p>이게 뭐지, 하고 구글링을 해보니 <strong>배포 대상이 Github일 경우 npm으로 설치해줘야 할 패키지가 또 있었다</strong><br>(아니, 이런 건 기본으로 좀 넣으라고 hexo님들아..)</p>
-<p>그래서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>그래서<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>명령어를 통해 배포를 위한 전용 npm package를 추가 설치해줘야 한다.<br>(npm의 –save 옵션에 대한 건 하단에 별첨을 참고바란다)</p>
-<p>자, 배포에 필요한 패키지도 설치했으니 다시<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>자, 배포에 필요한 패키지도 설치했으니 다시<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>명령어를 실행해주면 깔끔하게 지정해 준 Github Repository로 배포되는 것을 확인할 수 있다.</p>
 <p>그러고나서 Github Repository에 접속해서 지정된 URL로 들어가면 쫘잔, 하고 로컬에서 띄웠던 페이지가 나온다.<br>(Github Page의 경우 배포 후 즉각 반영되진 않는다. 물론 수분내로 반영되지만 딜레이가 좀 있음을 알아두자)</p>
 <p>자, 그럼 이제 직접 만들고 배포한 Github Page가 <em>이상없이 동작하는 것을</em> 확인할 수 있을 것이다.</p>
@@ -214,7 +214,7 @@
 <h3 id="몇가지-삽질"><a href="#몇가지-삽질" class="headerlink" title="몇가지 삽질"></a>몇가지 삽질</h3><p><strong>삽질 1.</strong><br>몇 번이나 언급했지만 hexo는 로컬에서 <strong>정적파일로 떨어트린 뒤</strong>에 Github에 업로드한다.</p>
 <p>정적파일로 떨어트리는 이 과정(<code>hexo generage</code>)에서,<br>기존 로컬에 남아있던 찌꺼기들로 인해 새로운 정적파일이 만들어질 때 불순물이 섞일 수도 있다고 한다.<br>(어떤 파일, 데이터, 뭐가 불순물인지는 명확히 모르겠습니다. 그걸 알면 내가 이미 Guru지…)</p>
 <p>그래서 <code>hexo generate</code>를 하기 전에 <code>hexo clean</code> 을 실행해서 청소를 한 번 싹 해줍니다.<br>이러면 <code>hexo clean</code> 하는 과정에서 뭔가 delete 되었다는 걸 확인할 수 있습니다.<br>그 후에 <code>hexo deploy</code>를 통해 Github으로 배포해보시기 바랍니다.<br>(참고로 <code>hexo deploy —generate</code> 를 하면 정적파일을 로컬에 떨군 뒤에 <strong>배포까지 한 방</strong>에 해버립니다)</p>
-<p>명령어만 순차적으로 나열해서 요약하자면 아래와 같군요.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy -generate</span><br></pre></td></tr></table></figure></p>
+<p>명령어만 순차적으로 나열해서 요약하자면 아래와 같군요.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy -generate</span><br></pre></td></tr></table></figure></p>
 <p>이제 되나요? 되면 그만 읽으셔도 되구요.<br>여전히 안 되나요? 그럼 좀 더 읽어주세요ㅋㅋㅋㅋ</p>
 <p><strong>삽질 2.</strong> </p>
 <p>이게 제가 삽질한 문제점입니다<br>(삽질1은 그냥 이 삽질을 해결코자 구글링을 하다보니 찾은 문제라, 이런 경우도 있구나 한 거구요)</p>
@@ -225,9 +225,9 @@
 <p>그럼 여기서 내가 별도로 생성한 Repository에 블로그를 생성한다면?<br>네, <strong>URL의 기본형태는 <a href="https://username.github.io/RepoName" target="_blank" rel="noopener">https://username.github.io/RepoName</a></strong>가 됩니다.<br>그리고 Github에서 저 URL을 root로 잡아버리기 때문에,<br>정적인 파일로 떨궈서 서비스하는 hexo의 경우에는<br>필요한 resource들의 경로를 제대로 잡지 못 하는 문제가 발생합니다.<br>(아,내가 이것 때문에 얼마나 허망한 구글링의 시간을 보냈던가ㅠㅠ)</p>
 <p>이건 어떻게 해결해야 할까요?<br>당연하게도 Github Page에서 명명한 URL 규칙을 우리가 바꿀 수는 없으니<br>hexo의 설정을 건드려줘야 합니다. 네, root 디렉토리의 _<em>config.yml</em> 에 해당 설정관련 값이 있습니다.</p>
 <p>_<em>config.yml</em> 을 열어보면 상단에</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yoursite.com</span><br><span class="line">root: /</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yoursite.com</span><br><span class="line">root: /</span><br></pre></td></tr></table></figure>
 <p>이런 게 있습니다.<br>…<strong>네, 떡하니 써있네요.</strong><br>너님의 사이트가 서브디렉토리를 쓰면 root 설정에 값을 추가해주라고…<br>무심결에 제대로 읽어보지 않고 성급히 구글링부터 한 제 잘못이네요..크읗ㅠ</p>
-<p>이제 해결해 봅시다. 저기 root 항목에 <code>/RepoName/</code> 을 적어주고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo deploy —generate</span><br></pre></td></tr></table></figure></p>
+<p>이제 해결해 봅시다. 저기 root 항목에 <code>/RepoName/</code> 을 적어주고<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo deploy —generate</span><br></pre></td></tr></table></figure></p>
 <p>를 해줍니다. 그럼 주루루룩 뜨더니 슝 하고 파일들이 Github Repository에 안착할 텐데요.<br>이제 블로그 URL로 들어가보시면 CSS도 깨지지 않는 평안한 블로그를 보실 수 있을 겁니다.</p>
 <p>아, 험난한 블로그 생성기네요. 지나고 나니 별 거 아닌데 넘나 힘든 것..<br>마침 에픽하이 노래, 빈차가 나오는데 가사가 마음에 와닿네요.<br><em>자라지 않으면 성장통도 그저 pain</em><br>크으, 에픽하이 가사는 정말 사골국물이에요,<br>울궈먹고 울궈먹어도 새롭고 이성보단 감성에 꽂혀주시네요ㅠㅠ</p>
 <p>…네, 샛길로 새는 걸 보면 아시겠지만 이 글은 여기까집니다.</p>
@@ -247,7 +247,7 @@
 
 </div>
 
-    <a data-url="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/" data-id="cjgtjta9i0008290tv55cg20r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://blinders.github.io/tech_blog/2018/02/25/hexo-blog-make-03/" data-id="cjgtlm5uf00088q0t23ltndyv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -378,6 +378,15 @@
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/05/04/hexo-blog-make-08/" class="title">[Hexo] Github Page로 블로그 만들기 08</a></p>
+                            <p class="item-date"><time datetime="2018-05-04T11:45:10.000Z" itemprop="datePublished">2018-05-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Etc/">Etc</a></p>
                             <p class="item-title"><a href="/tech_blog/2018/05/04/180504-ssul/" class="title">180504_근황</a></p>
                             <p class="item-date"><time datetime="2018-05-04T09:13:21.000Z" itemprop="datePublished">2018-05-04</time></p>
@@ -402,15 +411,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
-                            <p class="item-title"><a href="/tech_blog/2018/03/25/hexo-blog-make-05/" class="title">[Hexo] Github Page로 블로그 만들기 05</a></p>
-                            <p class="item-date"><time datetime="2018-03-25T03:35:53.000Z" itemprop="datePublished">2018-03-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -420,7 +420,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Etc/">Etc</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">7</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Etc/">Etc</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -429,7 +429,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tech_blog/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tech_blog/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tech_blog/tags/develop/" style="font-size: 20px;">develop</a> <a href="/tech_blog/tags/github/" style="font-size: 20px;">github</a> <a href="/tech_blog/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tech_blog/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tech_blog/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tech_blog/tags/web/" style="font-size: 20px;">web</a> <a href="/tech_blog/tags/근황/" style="font-size: 10px;">근황</a>
+            <a href="/tech_blog/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tech_blog/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tech_blog/tags/develop/" style="font-size: 20px;">develop</a> <a href="/tech_blog/tags/github/" style="font-size: 20px;">github</a> <a href="/tech_blog/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tech_blog/tags/hexo-web-blog-github-develop/" style="font-size: 10px;">hexo - web - blog - github - develop</a> <a href="/tech_blog/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tech_blog/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tech_blog/tags/web/" style="font-size: 20px;">web</a> <a href="/tech_blog/tags/근황/" style="font-size: 10px;">근황</a>
         </div>
     </div>
 

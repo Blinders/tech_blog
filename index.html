@@ -168,22 +168,27 @@
 <p>그래서 첫 알고리즘 카테고리 포스팅으로 Stack 과 Queue를 생각했는데, 사실 이게 설명하기가 좀 애매한 구석이 있다. 그 애매한 게 뭐냐하면 너무 잘 알고 익숙한 것이라, 어떻게 설명을 해야 할 지 난감한게 문제다.</p>
 <p>어떻게 걷고 뛰는 건지에 대한 방법론을, 서른 둘이 된 지금의 시점에서 누군가에게 설명하라고 한다면..음..그냥 다리를 움직이면 걷고 뛰어요..라는 생각이 맨 처음에 드는 거랑 같은 느낌이랄까.</p>
 <p>그러니 일단, 정의부터 내려보자.</p>
-<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>한 단어로 정의하자면, <strong>LIFO</strong>다. Last In, First Out. 마지막에 들어온 놈이, 가장 먼저 나간다. 즉 입구와 출구가 하나다. 땅으로 깊게 파 놓은 구덩이를 생각해보자.<br>그 구덩이에 데이터(변수든 Array든, 객체든 뭐든 여튼 하드웨어 적으로 메모리를 잡아먹는 무엇)를 집어넣고 그 위로 또 데이터를 집어넣는다. 그러고 나중에 데이터를 다시 꺼내려면, 옆으로 땅굴이라도 뚫지 않는 이상 가장 먼저 넣은 데이터를 우선적으로 꺼낼 수가 없다. 그 상태에서 꺼낼 수 있는 데이터는 가장 위에 보이는 데이터이다. </p>
+<hr>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>한 단어로 정의하자면, <strong>LIFO</strong>다. Last In, First Out. 마지막에 들어온 놈이, 가장 먼저 나간다. 즉 입구와 출구가 하나다. 땅으로 깊게 파 놓은 구덩이를 생각해보자. </p>
+<p>그 구덩이에 데이터(변수든 Array든, 객체든 뭐든 여튼 하드웨어 적으로 메모리를 잡아먹는 무엇)를 집어넣고 그 위로 또 데이터를 집어넣는다. 그러고 나중에 데이터를 다시 꺼내려면, 옆으로 땅굴이라도 뚫지 않는 이상 가장 먼저 넣은 데이터를 우선적으로 꺼낼 수가 없다. 그 상태에서 꺼낼 수 있는 데이터는 가장 위에 보이는 데이터이다. </p>
 <img src="/tech_blog/2018/05/05/algorithm-stack-queue/featured-stack.jpg">
 <p>위 이미지는 Stack 이라는 안드로이드 게임인데, 실제 플레이를 해보면 계속해서 육면체 박스가 위로 쌓이기만 한다. 타이밍을 맞춰서 쌓고 가장 높은 위치까지 쌓는 것을 다투는 게임인데, 정말 이름을 따라서 쌓고, 또 쌓기만 한다(안타깝게도 꺼내진 않는다)</p>
 <p>이처럼 Stack은 쌓고, 쌓은 걸 빼는 자료구조라고 생각하면 된다.<br>또한 범용적으로 쓰이는 용어가 있는데 데이터를 Stack에 넣는 것을 ‘밀어 넣는다’라는 의미로 <strong>push</strong>. Stack에 쌓인 데이터를 빼는 행위를 ‘꺼내다’라는 의미로 <strong>pop</strong> 이라고 부른다.</p>
 <p>실제로 Stack을 코드로써 구현한 대부분의 API들은 push와 pop이라는 이름의 메서드를 만들어서 Stack에 데이터를 쌓고 데이터를 꺼내는데 활용되도록 가이드하고 있다.</p>
 <p>실제 현업에서는 굳이 Stack을 코드로 한땀한땀 작성해서 사용하지는 않는다. 대학생, 혹은 자료구조를 처음 공부하는 입장에서는 직접 구현해보는 것이 도움이 되겠지만, 이미 C++이나 Java등의 언어에서 기본 적인 자료구조는클래스 형태로 제공을 하고 있기 때문이다. 거기에 위에서 말한 push, pop 이외에도 size,empty등 Stack을 활용함에 있어서 부가적으로 필요한 정보들을 리턴해주는 메서드들도 제공해주고 있기 때문에 우리는 잘 만들어진 아이들을 잘 사용해주면 된다.</p>
-<p>두 언어에 대한 짧은 사용 예시를 아래에 함께 하니 참고하기 바란다.<br><strong>C++의 경우</strong> #include<stack><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt; // stack STL </span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">  stack&lt;int&gt; stack;</span><br><span class="line"></span><br><span class="line">  stack.push(4);</span><br><span class="line">  stack.push(5);</span><br><span class="line">  stack.push(1);</span><br><span class="line"></span><br><span class="line">  cout &lt;&lt; stack.size() &lt;&lt; endl; // 3</span><br><span class="line">  cout &lt;&lt; stack.top() &lt;&lt; endl; // 1</span><br><span class="line"></span><br><span class="line">  stack.pop();</span><br><span class="line">  cout &lt;&lt; stack.size() &lt;&lt; endl; // 2</span><br><span class="line">  cout &lt;&lt; stack.top() &lt;&lt; endl; //5</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></stack></p>
-<p><strong>Java의 경우</strong> import java.util.Stack;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">public class StackExample &#123;</span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack = new Stack();</span><br><span class="line"></span><br><span class="line">    stack.push(4);</span><br><span class="line">    stack.push(5);</span><br><span class="line">    stack.push(1);</span><br><span class="line"></span><br><span class="line">    System.out.println(stack.size()); // 3</span><br><span class="line">    System.out.println(stack.peek()); // 1</span><br><span class="line"></span><br><span class="line">    System.out.println(stack.size()); // 3</span><br><span class="line">    System.out.println(stack.pop());  // 1</span><br><span class="line"></span><br><span class="line">    System.out.println(stack.size()); // 2</span><br><span class="line">    System.out.println(stack.peek()); // 5</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>두 언어에 대한 짧은 사용 예시를 아래에 함께 하니 참고하기 바란다.<br><strong>C++의 경우</strong> <code>#include&lt;stack&gt;</code><br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">stack</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">stack</span>.push(<span class="number">4</span>);</span><br><span class="line">  <span class="built_in">stack</span>.push(<span class="number">5</span>);</span><br><span class="line">  <span class="built_in">stack</span>.push(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="built_in">stack</span>.size() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 3</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="built_in">stack</span>.top() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">stack</span>.pop();</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="built_in">stack</span>.size() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 2</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="built_in">stack</span>.top() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Java의 경우</strong> <code>import java.util.Stack;</code><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StackExample</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack();</span><br><span class="line"></span><br><span class="line">    stack.push(<span class="number">4</span>);</span><br><span class="line">    stack.push(<span class="number">5</span>);</span><br><span class="line">    stack.push(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(stack.size()); <span class="comment">// 3</span></span><br><span class="line">    System.out.println(stack.peek()); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    System.out.println(stack.size()); <span class="comment">// 3</span></span><br><span class="line">    System.out.println(stack.pop());  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    System.out.println(stack.size()); <span class="comment">// 2</span></span><br><span class="line">    System.out.println(stack.peek()); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
 <h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>와..Stack에 대한 글이 생각보다 길어졌다. 사실 이렇게 길게 적을 거라곤 생각 안 했는데, 예시 코드와 함께 쓰다보니 좀 길어진 거 같다. 그럼 이제 Stack 과 늘 함께 설명되는 Queue에 대해 포스팅을 해보겠다.</p>
-<p>Stack과 Queue는 둘다 선형 알고리즘이다(물론 Queue의 경우 환형도 있긴하지만).<br>‘선형’. 데이터를 저장하고 활용하는 방식이 ‘선’을 그은 것과 같은 형태를 띈다고 해서 선형 알고리즘이라고 불리운다. 앞에서 설명한 Stack을 생각해보자. 입구와 출구가 하나인 구덩이를 예시로 들었었다. 그 구덩이도 잘 보면 세로로 세워진 선과 같은 형태이다.<br>그럼 Queue는 Stack과 무엇이 다를까.<br>일단 Queue는 <strong>FIFO</strong>다. First In First Out. 먼저 들어온 데이터가 먼저 나간다. 즉, 데이터가 들어오는 입구와 출구가 별개다. 다만, 별개라고 해서 내가 사용하고자 하는 데이터가 중간쯤 들어왔는데 얘부터 먼저 쏙 빼서 사용할 수는 없다. 먼저 들어온 데이터가, 먼저 나가야 하는 것이 Queue의 원칙이자 정의이다.</p>
+<p>Stack과 Queue는 둘다 선형 알고리즘이다(물론 Queue의 경우 환형도 있긴하지만).<br>‘선형’. 데이터를 저장하고 활용하는 방식이 ‘선’을 그은 것과 같은 형태를 띈다고 해서 선형 알고리즘이라고 불리운다. 앞에서 설명한 Stack을 생각해보자. 입구와 출구가 하나인 구덩이를 예시로 들었었다. 그 구덩이도 잘 보면 세로로 세워진 선과 같은 형태이다.</p>
+<p><strong>그럼 Queue는 Stack과 무엇이 다를까?</strong></p>
+<p>일단 Queue는 <strong>FIFO</strong>다. First In First Out. 먼저 들어온 데이터가 먼저 나간다. 즉, 데이터가 들어오는 입구와 출구가 별개다. 다만, 별개라고 해서 내가 사용하고자 하는 데이터가 중간쯤 들어왔는데 얘부터 먼저 쏙 빼서 사용할 수는 없다. 먼저 들어온 데이터가, 먼저 나가야 하는 것이 Queue의 원칙이자 정의이다.</p>
 <img src="/tech_blog/2018/05/05/algorithm-stack-queue/queue.jpg">
 <p>이 사진은 2014년에 영국 여행을 하며 본 안내문이다. 당시 관광지에 들어가기 위한 대기줄을 서 있었고 이 안내문을 보고는 단박에 Queue에 대한 깨달음을 얻을 수 있었다. 늘 코드와 이론으로만 보던 내용을 이렇게 실생활에서 보게 되다니, 신기할 따름이었다. 사실상 영어단어로써의 Queue는 이와 같이 무언가를 하기 위해 일렬로 늘어선 사람들로 이루어진 줄을 의미하기도 하는데, 실제로 이렇게 대기줄로 형성된 사람들은 가장 먼저 선 사람이 볼 일을 보고 다음 사람이 순번을 이어받게 된다. First In, First Out 의 형태인 것이다.</p>
 <p>이와 동일한 예제로 내가 대학생 시절 받았던 Queue관련 과제는 은행의 업무처리 시스템을 개발하는 것이었다. 말해놓고보니 되게 거창한 과제 같은데, 실제 돈을 송금하고 인출하고 하는 은행 시스템을 생각한다면 오산이다. 과제 설명을 조금 하자면 은행원이 3명이 있을 때 각 은행원 별로 능력의 역차가 있어서 하나의 일에 대해 A는 3분, B는 5분, C는 1분이 걸려 일을 처리한다고 가정한다. 거기에 손님들이 9시부터 1분에 한 명씩 입장할 때에 은행에 업무가 종료되는 가장 빠른 시각은 언제인가, 를 구하는 과제였다.<br>전형적인 대기줄(Queue)문제였는데, 정확치는 않지만 해결하는데 이틀 정도 걸렸던 것 같다(이틀 내내 했다는게 아니라..학교가고 밥 먹고 잠자고 놀고 할 거 다 하고…)</p>
 <p>물론, Queue 또한 Stack 처럼 잘 작성 된 API들이 존재하므로 필요시 가져다 잘 사용해주기만 하면 된다. 가장 대표적인 C++과 Java의 예시를 아래에 작성하니 참고바란다.</p>
-<p><strong>C++의 경우</strong> #include<queue><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#inlcude&lt;iostream&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">  queue&lt;int&gt; q;</span><br><span class="line"></span><br><span class="line">  q.push(4);</span><br><span class="line">  q.push(5);</span><br><span class="line">  q.push(1);</span><br><span class="line"></span><br><span class="line">  cout &lt;&lt; q.size() &lt;&lt; endl; // 3</span><br><span class="line">  cout &lt;&lt; q.front() &lt;&lt; endl; // 4</span><br><span class="line">  cout &lt;&lt; q.back() &lt;&lt; endl; // 1</span><br><span class="line"></span><br><span class="line">  q.pop();</span><br><span class="line">  cout &lt;&lt; stack.size() &lt;&lt; endl; // 2</span><br><span class="line">  cout &lt;&lt; q.front() &lt;&lt; endl; // 5</span><br><span class="line">  cout &lt;&lt; q.back() &lt;&lt; endl; // 1</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></queue></p>
-<p><strong>Java의 경우</strong> import java.util.Queue;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">public class StackExample &#123;</span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">    Queue&lt;Integer&gt; q = new LinkedList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">    q.offer(4);</span><br><span class="line">    q.offer(5);</span><br><span class="line">    q.offer(1);</span><br><span class="line"></span><br><span class="line">    System.out.println(q.size()); // 3</span><br><span class="line">    System.out.println(q.peek()); // 4</span><br><span class="line"></span><br><span class="line">    System.out.println(q.size()); // 3</span><br><span class="line">    System.out.println(q.poll());  // 4</span><br><span class="line"></span><br><span class="line">    System.out.println(q.size()); // 2</span><br><span class="line">    System.out.println(q.peek()); // 5</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>C++의 경우</strong> <code>#include&lt;queue&gt;</code><br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#inlcude<span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line">  q.push(<span class="number">4</span>);</span><br><span class="line">  q.push(<span class="number">5</span>);</span><br><span class="line">  q.push(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; q.size() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 3</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; q.front() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; q.back() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">  q.pop();</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="built_in">stack</span>.size() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 2</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; q.front() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 5</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; q.back() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Java의 경우</strong> <code>import java.util.Queue;</code><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"><span class="keyword">import</span> java.util.Queue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StackExample</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">    q.offer(<span class="number">4</span>);</span><br><span class="line">    q.offer(<span class="number">5</span>);</span><br><span class="line">    q.offer(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(q.size()); <span class="comment">// 3</span></span><br><span class="line">    System.out.println(q.peek()); <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line">    System.out.println(q.size()); <span class="comment">// 3</span></span><br><span class="line">    System.out.println(q.poll());  <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line">    System.out.println(q.size()); <span class="comment">// 2</span></span><br><span class="line">    System.out.println(q.peek()); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -194,7 +199,7 @@
 
 </div>
 
-    <a data-url="https://blinders.github.io/tech_blog/2018/05/05/algorithm-stack-queue/" data-id="cjgtjtaa1000l290twq1de8sf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://blinders.github.io/tech_blog/2018/05/05/algorithm-stack-queue/" data-id="cjgtlm5vq000o8q0ttj1cwm0o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -272,6 +277,166 @@
 
 
 
+    <article id="post-hexo-blog-make-08" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/tech_blog/2018/05/04/hexo-blog-make-08/">[Hexo] Github Page로 블로그 만들기 08</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/tech_blog/2018/05/04/hexo-blog-make-08/">
+            <time datetime="2018-05-04T11:45:10.000Z" itemprop="datePublished">2018-05-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/tech_blog/categories/Web/">Web</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tech_blog/tags/hexo-web-blog-github-develop/">hexo - web - blog - github - develop</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>블로그 포스팅은 끝날 길이 없어보인다.<br>하나를 해결하면 하나의 특이점이 나와서..해야 할 게 늘어나버리는 거 같다.</p>
+<p>오늘 포스팅하는 내용도 비슷한 맥락이다.<br><a href="https://blinders.github.io/tech_blog/2018/03/25/hexo-blog-make-07/">7번째 블로그 포스팅</a>을 마지막으로 더 이상 블로그 만들기에 대한 포스팅을 할 일이 없을거라 생각했는데, 나의 오산이었다. 블로그에 알고리즘 관련 글을 포스팅하려고 하다보니 문제점을 하나 찾았는데, Markdown 코드블럭에 하이라이팅이 되지 않고 있었다.</p>
+<p>보통 마크다운운은 ``` 이렇게 따옴표 3개로 열고 닫는 사이에 프로그램 코드를 작성하면 테마에 따라서 표시를 해준다. 클래스명은 클래스명대로, 변수명은 변수명대로, 자료형은 자료형대로, 예약어는 예약어대로..색의 분간을 줘서 보는 사람이 좀 더 편하게 볼 수 있도록 해주는 것이다.</p>
+<p><strong>근데 그 기능이 동작하지 않고 있었다.</strong></p>
+<p>생각해보면 기존에 올렸던 명령어들에서도 그 동작이 일어났어야 하는건데 그냥 까만 배경에 회색 글씨였는데..이걸 왜 이제서야 눈치챈 건지.</p>
+<p>하이라이팅 관련해서는 내가 사용하는 <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Theme" target="_blank" rel="noopener">icarus 테마에서 지원하는 기능</a>이 있었다.<br><a href="https://highlightjs.org" target="_blank" rel="noopener">highlight.js</a>를 디폴트값으로 해서 _config.yml 파일에 옵션을 줌으로써 제공이 되어야 하는데…<strong>실제 띄워놓은 서버를 보니 동작을 하지 않고 있었다.</strong></p>
+<p>짧은 코드야 괜찮지만, 코드가 길어질 경우에는 가독성에서 확실히 차이가 난다.<br>그리고 이 블로그는 기술 블로그이기 때문에 언제, 어떤 식으로든 코드가 올라 올 것이다.<br>그렇기에 코드 하이라이팅은 중요한 기능 중에 하나라서, 오늘 또 해법을 찾아 이리저리 돌아다녔다.</p>
+<hr>
+<h2 id="찾은-방법은-총-3가지였다"><a href="#찾은-방법은-총-3가지였다" class="headerlink" title="찾은 방법은 총 3가지였다."></a>찾은 방법은 총 3가지였다.</h2><ol>
+<li>icarus 에서 제공하는 기본 기능.</li>
+<li>hexo-prism-plugin 이라는 별도의 npm package </li>
+<li>hexo의 기본 기능</li>
+</ol>
+<p>결론부터 말하자면 <strong>3. hexo의 기본 하이라이팅 기능을 사용하게 되었다.</strong><br>이유는 간단하다…3번이 너무 강력해서 서버를 띄웠을 때 1,2번이 동작을 하지 않았다.<br>(물론 내가 1,2번을 정확하게 적용하는 법을 모른 것일 수도 있다.)</p>
+<h2 id="해결법부터-소개를-하자면"><a href="#해결법부터-소개를-하자면" class="headerlink" title="해결법부터 소개를 하자면"></a>해결법부터 소개를 하자면</h2><p>이것도 결국 7번에 포스팅(이미지 첨부 관련)했던 것과 마찬가지로 <strong>태그 플러그인</strong>을 사용하게 되었다.<br>사실 태그 플러그인 페이지를 가봐도 코드에 대해서 Markdown처럼 장문의 코드를 ``` 로 처리하라고 되 있지만..<br>이걸 사용하면 정말 딱, 코드인 것처럼 보이면서 + 라인 줄 수 정도만 알 수 있다.</p>
+<p>사용된 코드가 C인지 Java인지 Javascript인지 SQL인지..알 수가 없다.</p>
+<p>하지만 코드 태그 플러그인을 사용하면 어떤 종류의 코드인지를 명시해 줄 수 있고, 명시된 코드의 형태에 따라서 하이라이팅이 적용된다.<br>사용법은 아래와 같다(실제 사용시에는 중괄호와 퍼센테이지 사이를 붙여야 한다.)</p>
+<p>{ % codeblock lang:java % }<br><strong>코드 작성 부분</strong><br>{ % endcodeblock % }</p>
+<p>이와 같은 형태로 사용해주면 되며 lang 옵션에 내가 사용한 언어의 종류를 적어주면 된다.<br>lang 옵션을 주지 않으면 그냥 까만 배경에 회색글씨로 표현이 되는 형태로 보이게 되며, 실제로 들어갈 수 있는 값은 <a href="https://highlightjs.org/static/demo/" target="_blank" rel="noopener">highlight.js demo</a>에서 확인할 수 있으며 우리가 사용하는 대부분의 프로그래밍 언어들은 있다고 보면 된다.</p>
+<hr>
+<h3 id="1번과-2번"><a href="#1번과-2번" class="headerlink" title="1번과 2번"></a>1번과 2번</h3><p>혹시나 나와 달리 1번과 2번 방법들로 성공시켜보고자 하시는 분들이 있을까봐 글을 좀 더 써본다.</p>
+<p><strong>1번. icarus에서 제공하는 기본 기능</strong></p>
+<p>icarus에서 제공하는 기본 기능에 대한 사용법은 <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Theme" target="_blank" rel="noopener">이 링크</a>에 들어가보면 간략히 설명이 나와있는데…<br>사실 themes &gt; _config.yml 에 있는 customize: 아래에 highlight: 항목에 테마명을 명시하라는 게 전부였다.<br>그리고 거기에 명시가능한 테마의 이름은 themes &gt; icarus테마 &gt; source &gt; css &gt; _highlight 에서 확인할 수 있음..</p>
+<p>겨우 이 설명이 전부였다. 이 설명을 따라 _config.yml 파일에서 테마명을 변경해 봤지만, 동작하지 않았다.<br>그래서 이 값도 저 값도 바꿔봤지만, 역시나 fail..다른 방법을 모색했고 그러다 찾은 게 아래에 나오는 2번 방법이다.</p>
+<p><strong>2번. hexo-prism-plugin 이라는 별도의 npm package</strong></p>
+<p>1번의 방법이 실패하고 구글링을 시작했다.<br>hexo icarus highlight, hexo code highlight, hexo code, hexo markdown code등등..수많은 키워드들로 구글링을 하고 Github Wiki를 봤지만 마땅한 해법이 나오지 않았다.<br>그렇게 계속 삽질을 하다가 보인 것이 code highlight를 해주는 npm package 였다.</p>
+<p><a href="https://www.npmjs.com/package/hexo-prism-plugin" target="_blank" rel="noopener">npm-prism-plugin</a>의 설명도 비교적 심플하다.<br>들어가보면 알겠지만 <code>npm i -S hexo-prism-plugin</code> 로 해당 패키지를 설치하고<br>블로그 디렉토리 &gt; _config.yml에 관련 옵션값을 설정한다.<br>그 뒤에 hexo clean, hexo generate를 통해서 정적파일들을 새롭게 빌드하고 서버를 올리면 코드에 하이라이팅이 먹힌다는 게, 해당 패키지의 설명이었다.<br>단, 이때 hexo가 기본적으로 제공하는 highlight가 disabled 되어야 하므로 _config.yml에서 false로 값을 줘야 했는데…이렇게 하고 서버를 올리니, 데헿, 아예 블럭단위의 코드가 먹지를 않는다<br>(여러줄의 코드들이 전부 한 줄짜리 코드들처럼 하이라이팅되어 나오더라)</p>
+<p>그래서 아,이것도 안되나보다 하고 package.json과 node_modules 디렉토리에 새로 설치된 패키지들을 지우고 어찌해야하나 고민하다가, <strong>아 잠깐? 기본 코드 하이라이팅을 false 해서 다른 애들이 아예 안 먹는거면 가장 강력한 코드 하이라이팅 도구가 hexo의 기본 도구 아닌가?</strong> 라는 생각에 도달하였고 그 생각을 바탕으로 hexo 공홈을 뒤지기 시작했다.<br>그러다 찾은 게 태그 플러그인을 사용하는 코드 블럭 작성이었고, 이 포스팅의 결론과 같은 답을 찾게 된 것이다.</p>
+<p>위에서도 말했듯, 3가지의 방법이 있었고 나는 그 중 3번 방법을 택한 것일 뿐이다.<br>이 글을 참고해서 자신의 블로그에 적용했는데 1번이나 2번 기능이 제대로 동작한다면, 마음에 드는 방법을 선택하며 된다.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://blinders.github.io/tech_blog/2018/05/04/hexo-blog-make-08/" data-id="cjgtlm5vm000l8q0tejjlwl3n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://blinders.github.io/tech_blog/2018/05/04/hexo-blog-make-08/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://blinders.github.io/tech_blog/2018/05/04/hexo-blog-make-08/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-180504-ssul" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -331,7 +496,7 @@
 
 </div>
 
-    <a data-url="https://blinders.github.io/tech_blog/2018/05/04/180504-ssul/" data-id="cjgtjta9y000i290tlztzgtkl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://blinders.github.io/tech_blog/2018/05/04/180504-ssul/" data-id="cjgtlm5vk000i8q0t3pslbm7c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -409,161 +574,6 @@
 
 
 
-    <article id="post-hexo-blog-make-07" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/tech_blog/2018/03/25/hexo-blog-make-07/">[Hexo] Github Page로 블로그 만들기 07</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/tech_blog/2018/03/25/hexo-blog-make-07/">
-            <time datetime="2018-03-25T07:59:41.000Z" itemprop="datePublished">2018-03-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/tech_blog/categories/Web/">Web</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tech_blog/tags/blog/">blog</a>, <a class="tag-link" href="/tech_blog/tags/develop/">develop</a>, <a class="tag-link" href="/tech_blog/tags/github/">github</a>, <a class="tag-link" href="/tech_blog/tags/hexo/">hexo</a>, <a class="tag-link" href="/tech_blog/tags/web/">web</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>어..하는 김에 하는 포스팅이다..<br>사실 저번 포스팅을 마지막으로 블로그 만들기 포스팅을 끝내려했는데<br>해당 포스팅을 하다보니 한 가지 이슈가 생겨서 이렇게 별도 포스팅을 하나 더 하게 되었다.</p>
-<p>예전 포스팅에 덫 붙이려했더니..나름 또 다른 주제같기도하고<br>저번 포스팅이 생각보다 길어질 거 같아서 이렇게 별도로 뺐다.</p>
-<p>이야기하려는 건 마크다운에서 이미지를 넣는 방법이다.<br>…정말 별 거 아니지 않은가?</p>
-<p><code>![이미지 이름](이미지 경로)</code> 와 같은 형식으로 마크다운에 선언하면 알아서 이미지가 로드된다.<br>사실 나도 저게 끝인 줄 알았고, 그래서 별의심없이 사용했으며 별도의 언급을 하지 않았다.</p>
-<p>기존 포스팅들에서는 딱히 이미지를 로드할 필요가 없었기에 사용하지 않은 기능이었는데<br><a href="https://blinders.github.io/tech_blog/2018/03/25/hexo-blog-make-06/">[Hexo] Github Page로 블로그 만들기 06</a>을 작성하다보니<br>화면 캡쳐를 넣는 게 좀 더 이해에 좋을 것 같아서 2장의 이미지를 넣게 되었다, 위와 같은 마크다운 문법으로.</p>
-<p>그리고 여기서 앞서 말했듯 한 가지 이슈가 발생했다.</p>
-<p>그 이슈가 뭐냐면…<strong>포스팅의 상세 페이지에서는 이미지가 나오는데 메인 페이지에선 엑박이 뜬 것이다</strong> </p>
-<p>처음엔 이게 뭥미? 싶었다.<br>개발자라면 누구나 그렇겠지만 이미지나 css,js 파일등이 로드되지 않으면 일단 경로부터 보곤한다.<br>나도 그래서 개발자 도구를 열어서 메인 페이지와 상세 페이지를 비교해봤는데<br>두 페이지가 각각 이미지를 로드할때 잡는 베이스경로가 달랐다.</p>
-<p>블로그 주소가 localhost:4000 이고 마크다운에 이미지 경로가 ./test.png 예로 들어보자면<br>메인 페이지는 localhost:4000 이 베이스가 되어서 읽어오는 이미지의 경로가 <code>localhost:4000/test.png</code>가 되버리고 상세 페이지는 localhost:4000/year/month/day 가 베이스라서<br><code>localhost:4000/year/month/day/test.png</code> 를 읽어오는 거다..</p>
-<p>해당 문제가 발생한 원인은 _config.yml의 <code>post_asset_folder</code> 옵션을 <strong>true</strong>로 설정했기 때문이다.<br>그냥 편하게 source 아래에 image 폴더 같은 거 만들어서 무조건 저기에 몰아넣으면 편할수도 있겠지만..<br>블로그별 리소스 관리측면에선 해당 옵션이 true 인 편이 훨씬 편하기에 저렇게 사용하는 게 더 효율적이라 생각한건데<br>이런 함정이 나를 기다릴 줄은 몰랐다.</p>
-<p>사실, 그전에 마크다운 문법인 <code>![이미지이름](이미지경로)</code>로 할떄로 경로를 어떻게 잡아야 하나 한참 헤맸던터라<br>상세페이지에서 이미지가 뙇하고 나와줬을때 다 했다, 싶었는데..홈으로 가니 나오는 엑박을 보곤 정신적 피로감이 팡하고 터졌다.</p>
-<p>게다가 관련 사항에 대해 구글링을 해봐도 잘 나오질 않아서 그냥 이미지 없이 글로만 설명할까, 란 생각도 했다.<br>하지만 앞으로 포스팅에 이미지를 하나도 안 넣을 것도 아니기에..어쩔 수 없이 나는 언제나 그렇듯 답을 찾아야 했다.</p>
-<hr>
-<h2 id="그래서-뭐-어떻게-해결한-건데"><a href="#그래서-뭐-어떻게-해결한-건데" class="headerlink" title="그래서 뭐 어떻게 해결한 건데?"></a>그래서 뭐 어떻게 해결한 건데?</h2><p>해답은 의외로 쉬운 곳에서 나왔다.<br>아니, 어쩌면 당연히 해답이 있어야 할 곳에서 해답이 나왔다.</p>
-<p>Hexo의 공식 가이드 중 <a href="https://hexo.io/ko/docs/asset-folders.html" target="_blank" rel="noopener">Asset Folders 항목</a>에 해답이 있었다.</p>
-<p>해당 가이드를 읽어보면 아래쪽에 <strong>상대 경로 참조를 위한 태그 플러그인</strong> 이라는 항목이 있는데</p>
-<p>해당 항목을 보면 마크다운 구문의 상대경로를 통해 asset 파일 참조 시 아카이브, 또는 인덱스 페이지에서 이를 표시하지 못 하는 문제가 있습니다<br>..라고 적혀있다. 그리고 그에따라 Hexo2에서 해결하기 위한 플러그인을 만들었고,,Hexo3에서 이를 위한 태그 플러그인들이 추가 되었다고 한다.</p>
-<p><strong>태그 플러그인</strong>이 무엇인지는 차후에 더 알아보도록 하고, 일단 위에서 나온 엑박 문제를 해결하기 위한 코드는 아래와 같았다.<br>위와 같이 post_asset_folder 옵션이 true일 때</p>
-<p>{ % asset_img image.png % }</p>
-<p>위와 같은 형식으로 마크다운 파일에 적어주면 상세페이지에서도, 메인 페이지에서도 이미지가 아주 잘 나온다.<br>(<strong>태그 플러그인의 이스케이프 문자가 먹질 않아서 중괄호와 퍼센트 사이를 띄웠는데, 실제 사용시엔 붙여야 한다</strong>)</p>
-<p>다만 저 앞에 있는 <code>asset_img</code> 라는 단어를 <code>img</code>나 여타다른 임의 문구로 바꿨을 때는<br>hexo에서 자체 에러를 뿜뿜하는데 아마 태그 플러그인 내부적으로 asset_img 라는 단어를<br>시동어쯤으로 사용하는가보다, 하는 추측을 했다.</p>
-<p>정리하자면, 포스팅에서 필요한 리소스 파일(이미지든 뭐든)이 있다면 생성된 디렉토리에 넣고<br>위와 같은 태그 플러그인으로 파일의 명을 명시하면 hexo가 알아서 로드를 해준다는 것이다.</p>
-<p>..하,고작 이걸 위해 얼마나 시간을 날린거니 나ㅠㅠ..이번 포스팅은 여기까지.<br>다음엔 또 이렇게 태그 플러그인이라는 생소한 아이를 봐버렸으니 그에 대한 걸 다루지 않을까 싶은데..<br>6편으로 마무리 하려 했던 블로그 만들기 포스팅은 끝날 기미가 보이질 않는 것 같다.</p>
-<p>좀 적당히 파고들어가는 성격이면 에라 됐다 싶을텐데..끙…<br>여튼 그럼 다음 포스팅에 보는 걸로 하자.</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://blinders.github.io/tech_blog/2018/03/25/hexo-blog-make-07/" data-id="cjgtjta9v000g290tdz0m7soq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://blinders.github.io/tech_blog/2018/03/25/hexo-blog-make-07/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://blinders.github.io/tech_blog/2018/03/25/hexo-blog-make-07/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/tech_blog/page/2/">2</a><a class="page-number" href="/tech_blog/page/3/">3</a><a class="page-number" href="/tech_blog/page/4/">4</a><a class="extend next" rel="next" href="/tech_blog/page/2/">Next &raquo;</a>
     </nav>
@@ -584,6 +594,15 @@
                             <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Algorithm/">Algorithm</a></p>
                             <p class="item-title"><a href="/tech_blog/2018/05/05/algorithm-stack-queue/" class="title">[Algorithm] Stack &amp; Queue</a></p>
                             <p class="item-date"><time datetime="2018-05-05T13:36:11.000Z" itemprop="datePublished">2018-05-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
+                            <p class="item-title"><a href="/tech_blog/2018/05/04/hexo-blog-make-08/" class="title">[Hexo] Github Page로 블로그 만들기 08</a></p>
+                            <p class="item-date"><time datetime="2018-05-04T11:45:10.000Z" itemprop="datePublished">2018-05-04</time></p>
                         </div>
                     </li>
                 
@@ -614,15 +633,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/tech_blog/categories/Web/">Web</a></p>
-                            <p class="item-title"><a href="/tech_blog/2018/03/25/hexo-blog-make-05/" class="title">[Hexo] Github Page로 블로그 만들기 05</a></p>
-                            <p class="item-date"><time datetime="2018-03-25T03:35:53.000Z" itemprop="datePublished">2018-03-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -632,7 +642,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Etc/">Etc</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">7</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Etc/">Etc</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tech_blog/categories/Web/">Web</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -641,7 +651,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tech_blog/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tech_blog/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tech_blog/tags/develop/" style="font-size: 20px;">develop</a> <a href="/tech_blog/tags/github/" style="font-size: 20px;">github</a> <a href="/tech_blog/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tech_blog/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tech_blog/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tech_blog/tags/web/" style="font-size: 20px;">web</a> <a href="/tech_blog/tags/근황/" style="font-size: 10px;">근황</a>
+            <a href="/tech_blog/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tech_blog/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tech_blog/tags/develop/" style="font-size: 20px;">develop</a> <a href="/tech_blog/tags/github/" style="font-size: 20px;">github</a> <a href="/tech_blog/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tech_blog/tags/hexo-web-blog-github-develop/" style="font-size: 10px;">hexo - web - blog - github - develop</a> <a href="/tech_blog/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tech_blog/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tech_blog/tags/web/" style="font-size: 20px;">web</a> <a href="/tech_blog/tags/근황/" style="font-size: 10px;">근황</a>
         </div>
     </div>
 
